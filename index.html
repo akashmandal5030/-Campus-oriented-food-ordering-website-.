@@ -1,0 +1,267 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width= , initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+  <title>Food Delivery Services</title>
+</head>
+<body>
+  <!--   sidebar   -->
+  <div class="sidebar">
+
+      <!--   logo   -->
+
+    <h1 class="logo">FoodTime</h1>
+
+      <!--   List of menues   -->
+
+    <div class="sidebar-menus">
+      <a href="#"><ion-icon name="storefront-outline"></ion-icon>Home</a>
+      <a href="#"><ion-icon name="receipt-outline"></ion-icon>Bills</a>
+      <a href="#"><ion-icon name="wallet-outline"></ion-icon>Wallet</a>
+      <a href="#"><ion-icon name="notifications-outline"></ion-icon>Notification</a>
+      <a href="#"><ion-icon name="chatbubbles-outline"></ion-icon>Contact Us</a>
+      <a href="#"><ion-icon name="settings-outline"></ion-icon>Setting</a>
+    </div>
+    <!--   Logout   -->
+    <div class="sidebar-logout">
+      <a href="#"><ion-icon name="log-out-outline"></ion-icon>Logout</a>
+    </div>
+  </div>
+
+  <!--  main  -->
+  <div class="main">
+      <!--  main navbar -->
+        <div class="main-navbar">
+            <!--  menu when appear on mobile version  -->
+              <ion-icon class="menu-toggle" name="menu-outline"></ion-icon>
+                <!--  search bar  -->
+                  <div class="search">
+                    <input type="text" placeholder="what you want to eat?">
+                    <button class="search-btn">Search</button>
+                  </div>
+                      <!--  profile icon on left side of navbar  -->
+                      <div class="profile">
+                        <a class="cart" href="#" onclick="toggleCartPopup()">
+                          <ion-icon name="cart-outline"></ion-icon>
+                          <span class="cart-count" id="cart-count">0</span>
+                        </a>
+                        <a class="user" href="#"><ion-icon name="person-outline"></ion-icon></a>
+                      </div>
+        </div>
+        <!--  shopping cart section  -->
+          <div id="cart-popup" class="cart-popup">
+            <h4>Shopping Cart</h4>
+            <table id="cart-items">
+              <thead>
+                <tr>
+                  <th>Item</th>
+                  <th>#</th>
+                  <th>Price(₹)</th>
+                  <th>Total(₹)</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+            <p>Total(₹) <span id="cart-total"> 0.00 </span></p>
+              <a class="cart-close" onclick="closeCart()"><ion-icon name="close-circle-outline"></ion-icon></a>
+          </div>
+        <!--  main highlight  -->
+          <div class="main-highlight">
+            <!--  title section and arrow  -->
+              <div class="main-header">
+                <h2 class="main-title">Recommendation</h2>
+                <div class="main-arrow">
+                  <ion-icon class="back" name="chevron-back-circle-outline"></ion-icon>
+                  <ion-icon class="next" name="chevron-forward-circle-outline"></ion-icon>
+
+                </div>
+              </div>
+            <!--  highlight menu  --> 
+              <div class="highlight-wrapper">
+                <div class="highlight-card">
+                  <img class="highlight-img" src="IMAGES/Salad.jpg">
+                  <div class="highlight-desc">
+                    <h4>Fresh Salad</h4>
+                    <p>₹349</p>
+                  </div>
+                </div>
+                <div class="highlight-card">
+                  <img class="highlight-img" src="IMAGES/Coffee.jpeg">
+                  <div class="highlight-desc">
+                    <h4>Cafe Latte</h4>
+                    <p>₹249</p>
+                  </div>
+                </div>
+                <div class="highlight-card">
+                  <img class="highlight-img" src="IMAGES/Burger.jpeg">
+                  <div class="highlight-desc">
+                    <h4>Big Burger</h4>
+                    <p>₹399</p>
+                  </div>
+                </div>
+                <div class="highlight-card">
+                  <img class="highlight-img" src="IMAGES/Meat.jpg">
+                  <div class="highlight-desc">
+                    <h4>Premium Meat</h4>
+                    <p>₹1200</p>
+                  </div>
+                </div>
+              </div> 
+          </div>
+          <!-- main menus / order-->
+           <div class="main-menus">
+            <!-- filter section  -->
+             <div class="main-filter">
+              <div>
+                <h2 class="main-title">Menu <bar> Category </bar></h2>
+                <div class="main-arrow">
+                  <ion-icon class="back-menus" name="chevron-back-circle-outline"></ion-icon>
+                  <ion-icon class="next-menus" name="chevron-forward-circle-outline"></ion-icon>
+                </div>
+              </div>
+              <div class="filter-wrapper">
+                <div class="filter-card">
+                  <div class="filter-icon">
+                    <ion-icon name="restaurant-outline"></ion-icon>
+                  </div>
+                  <p>All Menus</p>
+                </div>
+                <div class="filter-card">
+                  <div class="filter-icon">
+                    <ion-icon name="fast-food-outline"></ion-icon>
+                  </div>
+                  <p>Burger</p>
+                </div>
+                <div class="filter-card">
+                  <div class="filter-icon">
+                    <ion-icon name="Pizza-outline"></ion-icon>
+                  </div>
+                  <p>Pizza</p>
+                </div>
+                <div class="filter-card">
+                  <div class="filter-icon">
+                    <ion-icon name="wine-outline"></ion-icon>
+                  </div>
+                  <p>Wine</p>
+                </div>
+                <div class="filter-card">
+                  <div class="filter-icon">
+                    <ion-icon name="ice-cream-outline"></ion-icon>
+                  </div>
+                  <p>Ice Cream</p>
+                </div>
+                <div class="filter-card">
+                  <div class="filter-icon">
+                    <ion-icon name="cafe-outline"></ion-icon>
+                  </div>
+                  <p>Coffee</p>
+                </div>
+                <div class="filter-card">
+                  <div class="filter-icon">
+                    <ion-icon name="fish-outline"></ion-icon>
+                  </div>
+                  <p>SeaFood</p>
+                </div>
+                <div class="filter-card">
+                  <div class="filter-icon">
+                    <ion-icon name="nutrition-outline"></ion-icon>
+                  </div>
+                  <p>Healthy</p>
+                </div>
+              </div>
+             </div>
+             <hr class="diveder">
+             <!-- list of food menus  -->
+              <div class="main-detail">
+                <h2 class="main-title">Choose Order</h2>
+                <div class="detail-wrapper">
+                  <div class="detail-card">
+                    <img class="detail-img" src="IMAGES/SeaFood.jpg">
+                    <div class="detail-desc">
+                      <div class="detail-name">
+                        <h4>Shrimp Soup - 1 bowl (300 ml)</h4>
+                        <p class="detail-sub"> Is a light, flavorful dish made with fresh shrimp, vegetables, and aromatic herbs perfect for seafood lovers.</p>
+                        <p class="price">₹299</p>
+                        <button class="add-to-cart-btn" onclick="addToCart('Shrimp Soup', 299.00)">Add to Cart</button>
+                      </div>
+                      <ion-icon class="detail-favorites" name="bookmark-outline"></ion-icon>
+                    </div>
+                  </div>
+                  <div class="detail-card">
+                    <img class="detail-img" src="IMAGES/Pizza.avif">
+                    <div class="detail-desc">
+                      <div class="detail-name">
+                        <h4>Pizza</h4>
+                        <p class="detail-sub"> Oven-baked flatbread topped with tomato sauce, mozzarella cheese, and a variety of flavorful toppings.</p>
+                        <p class="price">₹1600</p>
+                        <button class="add-to-cart-btn" onclick="addToCart('Pizza', 1600.00)">Add to Cart</button>
+                      </div>
+                      <ion-icon class="detail-favorites" name="bookmark-outline"></ion-icon>
+                    </div>
+                  </div>
+                  <div class="detail-card">
+                    <img class="detail-img" src="IMAGES/Wine.jpg">
+                    <div class="detail-desc">
+                      <div class="detail-name">
+                        <h4>Wine</h4>
+                        <p class="detail-sub"> Fermented beverage made from grapes, offering a rich variety of flavors,perfect for pairing with meals or enjoying on its own.</p>
+                        <p class="price">₹2800</p>
+                        <button class="add-to-cart-btn" onclick="addToCart('Wine', 2800.00)">Add to Cart</button>
+
+                      </div>
+                      <ion-icon class="detail-favorites" name="bookmark-outline"></ion-icon>
+                    </div>
+                  </div>
+                  <div class="detail-card">
+                    <img class="detail-img" src="IMAGES/Burger.jpeg">
+                    <div class="detail-desc">
+                      <div class="detail-name">
+                        <h4> Big Veg Burger</h4>
+                        <p class="detail-sub"> Grilled patty served in a soft bun with fresh lettuce, tomatoes, cheese, and a choice of sauces.</p>
+                        <p class="price">₹399</p>
+                        <button class="add-to-cart-btn" onclick="addToCart('Big Veg Burger', 399.00)">Add to Cart</button>
+
+                      </div>
+                      <ion-icon class="detail-favorites" name="bookmark-outline"></ion-icon>
+                    </div>
+                  </div>
+                  <div class="detail-card">
+                    <img class="detail-img" src="IMAGES/Coffee.jpeg">
+                    <div class="detail-desc">
+                      <div class="detail-name">
+                        <h4> Hot Cafe Latte</h4>
+                        <p class="detail-sub"> Aomatic beverage brewed from roasted coffee beans, offering a perfect balance of bold flavors and warmth for an energizing start to your day. </p>
+                        <p class="price">₹249</p>
+                        <button class="add-to-cart-btn" onclick="addToCart('Hot Cafe Latte', 249.00)">Add to Cart</button>
+
+                      </div>
+                      <ion-icon class="detail-favorites" name="bookmark-outline"></ion-icon>
+                    </div>
+                  </div>
+                  <div class="detail-card">
+                    <img class="detail-img" src="IMAGES/Salad.jpg">
+                    <div class="detail-desc">
+                      <div class="detail-name">
+                        <h4> Fresh Salad</h4>
+                        <p class="detail-sub"> Crisp mix of leafy greens, vegetables, and optional proteins, tossed with a light dressing for a healthy and refreshing meal.</p>
+                        <p class="price">₹349</p>
+                        <button class="add-to-cart-btn" onclick="addToCart('Fresh Salad', 349.00)">Add to Cart</button>
+                      </div>
+                      <ion-icon class="detail-favorites" name="bookmark-outline"></ion-icon>
+                    </div>
+                  </div>
+                </div>
+              </div>
+           </div>
+  </div>
+</body>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<!--  adding javascript  -->
+  <script src="http://code.jquery.com/jquery-2.2.4.min.js"></script>
+  <script src="app.js"></script>
+</html>
